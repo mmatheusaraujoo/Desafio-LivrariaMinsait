@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace LivrariaApi.Controllers
 {
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
     [Route("[controller]")]
     [ApiController]
     public class AutorController : ControllerBase
@@ -28,7 +29,7 @@ namespace LivrariaApi.Controllers
                 }
                 return Ok(autoresDto);
             }
-            catch (Exception e) { return StatusCode(500, $"{e.Message} \n {e.InnerException.Message}"); }
+            catch (Exception e) { return StatusCode(500, $"{e.Message}\n{e.InnerException.Message}"); }
         }
 
         [HttpGet("{id}")]
@@ -40,7 +41,7 @@ namespace LivrariaApi.Controllers
                 return Ok(autorDto);
             }
             catch (ArgumentNullException e) { return NotFound(e.Message); }
-            catch (Exception e) { return StatusCode(500, $"{e.Message} \n {e.InnerException.Message}"); }
+            catch (Exception e) { return StatusCode(500, $"{e.Message}\n{e.InnerException.Message}"); }
         }
 
         [HttpPost]
@@ -51,11 +52,11 @@ namespace LivrariaApi.Controllers
                 var novoAutorDto = await _autorService.CriarNovoAutor(createAutorDto);
                 return CreatedAtAction(nameof(RetornarAutorPorId), new { id = novoAutorDto.Id }, novoAutorDto);
             }
-            catch (Exception e) { return StatusCode(500, $"{e.Message} \n {e.InnerException.Message}"); }
+            catch (Exception e) { return StatusCode(500, $"{e.Message}\n{e.InnerException.Message}"); }
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> AlterarAutor(int id, [FromBody] UpdateAutorDto updateAutorDto)
+        public IActionResult AlterarAutor(int id, [FromBody] UpdateAutorDto updateAutorDto)
         {
             try
             {
@@ -63,9 +64,22 @@ namespace LivrariaApi.Controllers
                 return NoContent();
             }
             catch (ArgumentNullException e) { return NotFound(e.Message); }
-            catch (Exception e) { return StatusCode(500, $"{e.Message} \n {e.InnerException.Message}"); }
+            catch (Exception e) { return StatusCode(500, $"{e.Message}\n{e.InnerException.Message}"); }
 
         }
 
+
+        [HttpDelete("{id}")]
+        public IActionResult RemoverAutorPorId(int id)
+        {
+            try
+            {
+                _autorService.RemoverAutorPorId(id);
+                return NoContent();
+            }
+            catch(ArgumentNullException e) { return NotFound(e.Message); }
+            catch(Exception e) { return StatusCode(500, $"{e.Message}\n{e.InnerException.Message}"); }
+        }
     }
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
 }

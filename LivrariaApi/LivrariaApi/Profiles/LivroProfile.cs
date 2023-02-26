@@ -11,15 +11,16 @@ namespace LivrariaApi.Profiles
             CreateMap<Livro, ReadLivroDto>()
                 .ForMember(dest => dest.Autores, opt => opt.MapFrom(
                     src => src.Autores.Select(
-                        autor => new
+                        autor => new Autor
                         {
-                            autor.Id,
-                            autor.Nome,
-                            autor.Nacionalidade,
-                            autor.ResumoBibliografico
+                            Id = autor.Id,
+                            Nome = autor.Nome,
+                            Nacionalidade = autor.Nacionalidade,
+                            ResumoBibliografico = autor.ResumoBibliografico
                         })));
             CreateMap<CreateLivroDto, Livro>();
-            CreateMap<UpdateLivroDto, Livro>();
+            CreateMap<UpdateLivroDto, Livro>()
+                .ForMember(x => x.Autores, opts => opts.Ignore());
         }
     }
 }

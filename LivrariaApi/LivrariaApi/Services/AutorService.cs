@@ -25,6 +25,7 @@ namespace LivrariaApi.Services
 
                 autores = await _dbContext.Autores
                     .AsNoTracking()
+                    .Include(x=>x.Livros)
                     .ToListAsync();
 
                 var AutoresDto = _mapper.Map<List<ReadAutorDto>>(autores);
@@ -39,6 +40,7 @@ namespace LivrariaApi.Services
             {
                 var autor = await _dbContext.Autores
                     .AsNoTracking()
+                    .Include(x=>x.Livros)
                     .Where(x => x.Id == id)
                     .FirstOrDefaultAsync();
 
@@ -69,11 +71,11 @@ namespace LivrariaApi.Services
         }
 
 
-        internal async void RemoverAutorPorId(int id)
+        internal void RemoverAutorPorId(int id)
         {
             try
             {
-                var autor = await BuscarAutorPorId(id);
+                var autor = BuscarAutorPorId(id);
                 _dbContext.Autores.Remove(autor);
                 _dbContext.SaveChanges();
             }
@@ -81,45 +83,25 @@ namespace LivrariaApi.Services
             catch (Exception e) { throw new Exception("Não foi possível remover o autor.", e); }
         }
 
-        internal async void AtualizarAutorPorId(int id, UpdateAutorDto autorDto)
+        internal void AtualizarAutorPorId(int id, UpdateAutorDto autorDto)
         {
             try
             {
-                var autor = await BuscarAutorPorId(id);
+                var autor = _dbContext.Autores.Find(id);
                 _mapper.Map(autorDto, autor);
-                await _dbContext.SaveChangesAsync();
+                _dbContext.SaveChanges();
             }
             catch (ArgumentNullException) { throw; }
             catch (Exception e) { throw new Exception("Não foi possível Atualizar o autor.", e); }
         }
 
-        internal async void RelacionarAutorAoLivro(int autorId, int livroId)
+        public Autor BuscarAutorPorId(int id)
         {
             try
             {
-                var autor = await BuscarAutorPorId(autorId);
-                var livro = await _dbContext.Livros.FirstOrDefaultAsync(x => x.Id == livroId);
-
-                if (livro == null) throw new ArgumentNullException("autorId", "Não foi possível localizar um livro com esse id.");
-                else
-                {
-                    autor.Livros.Add(livro);
-                    await _dbContext.SaveChangesAsync();
-
-                }
-            }
-            catch (ArgumentNullException) { throw; }
-            catch (Exception e) { throw new Exception("Não foi possível relacionar o autor com o livro.", e); }
-
-        }
-
-        public async Task<Autor> BuscarAutorPorId(int id)
-        {
-            try
-            {
-                var autor = await _dbContext.Autores
+                var autor = _dbContext.Autores
                     .Where(x => x.Id == id)
-                    .FirstOrDefaultAsync();
+                    .FirstOrDefault();
 
                 if (autor == null) { throw new ArgumentNullException("id", "Não foi possível localizar um autor com esse id."); }
 

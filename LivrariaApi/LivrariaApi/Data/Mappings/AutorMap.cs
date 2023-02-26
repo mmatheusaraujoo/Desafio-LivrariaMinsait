@@ -46,6 +46,21 @@ namespace LivrariaApi.Data.Mappings
                 .HasColumnType("NVARCHAR")
                 .HasMaxLength(500);
 
+            builder.HasMany(x => x.Livros)
+            .WithMany(x => x.Autores)
+            .UsingEntity<Dictionary<string, object>>(
+                "AutorLivro",
+                livro => livro.HasOne<Livro>()
+                    .WithMany()
+                    .HasForeignKey("LivroId")
+                    .HasConstraintName("FK_LivroAutor_LivroId")
+                    .OnDelete(DeleteBehavior.Restrict),
+                autor => autor.HasOne<Autor>()
+                    .WithMany()
+                    .HasForeignKey("AutorId")
+                    .HasConstraintName("FK_LivroAutor_AutorId")
+                    .OnDelete(DeleteBehavior.Restrict));
+
         }
     }
 }

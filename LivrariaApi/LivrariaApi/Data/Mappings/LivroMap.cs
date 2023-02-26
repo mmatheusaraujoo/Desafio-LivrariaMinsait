@@ -72,6 +72,11 @@ namespace LivrariaApi.Data.Mappings
                 .HasColumnType("SMALLINT")
                 .HasDefaultValue(0);
 
+            builder.Property(x => x.FotoDaCapa)
+                .IsRequired(false)
+                .HasColumnName("FotoDaCapa")
+                .HasColumnType("NVARCHAR")
+                .HasMaxLength(500);
 
 
 
@@ -83,13 +88,13 @@ namespace LivrariaApi.Data.Mappings
                     "AutorLivro",
                     livro => livro.HasOne<Autor>()
                         .WithMany()
-                        .HasForeignKey("LivroId")
-                        .HasConstraintName("FK_LivroAutor_LivroId")
+                        .HasForeignKey("AutorId")
+                        .HasConstraintName("FK_LivroAutor_AutorId")
                         .OnDelete(DeleteBehavior.Restrict),
                     autor => autor.HasOne<Livro>()
                         .WithMany()
-                        .HasForeignKey("AutorId")
-                        .HasConstraintName("FK_LivroAutor_AutorId")
+                        .HasForeignKey("LivroId")
+                        .HasConstraintName("FK_LivroAutor_LivroId")
                         .OnDelete(DeleteBehavior.Restrict));
         }
     }

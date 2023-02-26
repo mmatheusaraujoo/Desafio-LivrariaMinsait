@@ -4,6 +4,7 @@ using LivrariaApi.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LivrariaApi.Migrations
 {
     [DbContext(typeof(LivrariaDataContext))]
-    partial class LivrariaDataContextModelSnapshot : ModelSnapshot
+    [Migration("20230226105322_alterandoMapeamentoAutor")]
+    partial class alterandoMapeamentoAutor
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -99,11 +102,6 @@ namespace LivrariaApi.Migrations
                         .HasMaxLength(150)
                         .HasColumnType("NVARCHAR")
                         .HasColumnName("Editora");
-
-                    b.Property<string>("FotoDaCapa")
-                        .HasMaxLength(500)
-                        .HasColumnType("NVARCHAR")
-                        .HasColumnName("FotoDaCapa");
 
                     b.Property<string>("ISBN")
                         .HasMaxLength(13)

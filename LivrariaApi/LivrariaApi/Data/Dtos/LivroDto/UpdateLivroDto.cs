@@ -11,5 +11,6 @@
         public int? Edicao { get; set; }
         public string? ISBN { get; set; }
         public int QuantidadeEmEstoque { get; set; }
+        public string? FotoDaCapa { get; set; }
     }
 }

@@ -16,6 +16,7 @@ namespace LivrariaApi
             
             builder.Services.AddScoped<LivroService>();
             builder.Services.AddScoped<AutorService>();
+            builder.Services.AddScoped<AutorLivroService>();
             builder.Services.AddAutoMapper(typeof(LivroProfile));
             builder.Services.AddAutoMapper(typeof(AutorProfile));
 

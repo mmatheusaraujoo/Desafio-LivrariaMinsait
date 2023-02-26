@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace LivrariaApi.Controllers
 {
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
     [Route("[controller]")]
     [ApiController]
     public class LivroController : ControllerBase
@@ -55,16 +56,31 @@ namespace LivrariaApi.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> AlteraLivro(int id, [FromBody] UpdateLivroDto updateLivroDto)
+        public IActionResult AlterarLivroPorId(int id, [FromBody] UpdateLivroDto updateLivroDto)
         {
             try
             {
-                _livroService.AtualizaLivroPorId(id, updateLivroDto);
+                _livroService.AtualizarLivroPorId(id, updateLivroDto);
                 return NoContent();
             }
             catch (ArgumentNullException e) { return NotFound(e.Message); }
             catch (Exception e) { return StatusCode(500, $"{e.Message} \n {e.InnerException.Message}"); }
 
         }
+
+        [HttpDelete("{id}")]
+        public IActionResult RemoverLivroPorId(int id)
+        {
+            try
+            {
+                _livroService.RemoverLivroPorId(id);
+                return NoContent();
+            }
+            catch (ArgumentNullException e) { return NotFound(e.Message); }
+            catch (Exception e) { return StatusCode(500, $"{e.Message} \n {e.InnerException.Message}"); }
+
+        }
+
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
     }
 }
