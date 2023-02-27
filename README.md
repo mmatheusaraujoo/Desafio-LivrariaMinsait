@@ -1,6 +1,6 @@
 <h1>Desafio Livraria Minsait-Indra<h1>
  
-<h1 align="center"> API Sistema de Gerenciamento de Senhas </h1>
+<h1 align="center"> API Sistema de Livraria </h1>
 
 <div align="center">
   <img src="https://img.shields.io/badge/Microsoft_SQL_Server-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white">
@@ -13,11 +13,11 @@
 
 <p align="center"><img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge">
 
-<p align="center">   Projeto que propõe a criação de uma API utilizando ASP.NET6 com o intuito de demonstrar conhecimento para o treinamento Jovens Profissionais da <b>Indra - Minsait (Formação .Net e Angular)</b>.</p>
+<p align="center">   Projeto que propõe a criação de um sistema de Livraria utilizando ASP.NET6 e Angular com o intuito de demonstrar conhecimento para o treinamento Jovens Profissionais da <b>Indra - Minsait (Formação .Net e Angular)</b>.</p>
 
 
 <h2>Descrição do projeto</h2>
-<p align="justify">Esse projeto em especifico apresenta a implementação de duas API RESTful, citada anteriomente, para um sistema de Gerenciamento de Senhas com funcionalidades basicas, tendo como metodo de requisição HTTP associado com sistema de gerenciamento de banco de dados MySQL. A API "GerenteDeSenha" é responsavel pela criação de usuarios e manipulação dos mesmos, já a API "SenhasAPI" é responsavel pelo CRUD de senhas a partir de um usuário já cadastrado. A criação e conexão com o banco de dados é feita utilizando Entity Framework, como auxilio a visualização da implementação é utilizado o Swagger, para gerenciar os acessos e geração de Tokens foi utilizado o Identity Framework.</p>
+<p align="justify">Esse projeto em especifico apresenta a implementação de um sistema de GLivraria com funcionalidades basicas, tendo como metodo de requisição HTTP associado com sistema de gerenciamento de banco de dados SQLService. A API "LivrariaAPI" é responsavel pela criação de dados e manipulação dos mesmos, já o Angular foi utiliado na criação do Front-End de interação com usuário. A criação e conexão com o banco de dados é feita utilizando Entity Framework, como auxilio a visualização da implementação é utilizado o Swagger.</p>
 
 
 <h1>Tecnologias Utilizadas</h1>
@@ -25,15 +25,10 @@
 <h2>C# / .NET6</h2>
 <p>Linguagem das API's e Framework Utilizado<p>
 
-<h2>Visual Basic</h2>
-<p>Foi utilizado a IDE como ambiente de densenvolvimento das API's.</p>
+<h2>Angular</h2>
+<p>Foi utilizado como Framework Front-End</p>
 
-<h3>Pacotes Nuget</h3>
-<p>Foram utilizados os seguintes pacotes Nuget, e suas versões, como ferramentas, de forma a auxiliar o desenvolvimento da aplicação em varias frentes.</p>
 
-```
-
-```
 <h2>Requisitos do projeto</h2>
 <p>Para confirguração do projeto é necessário os seguintes itens:</p>
 <ul>
