@@ -76,7 +76,9 @@
             executar projetos Angular. Você pode instalá-lo globalmente em seu computador usando o seguinte
             comando no terminal:
         </p>
-        ```npm install -g @angular/cli```
+        ```
+        npm install -g @angular/cli
+        ```
     </li>
 </ul>
 <h2>Configurando o projeto</h2>
