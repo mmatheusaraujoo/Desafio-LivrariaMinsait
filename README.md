@@ -77,9 +77,9 @@
             comando no terminal:
         </p>
         <p>
-```
-npm install -g @angular/cli
-```
+            ```
+            npm install -g @angular/cli
+            ```
         </p>
     </li>
 </ul>
@@ -91,27 +91,27 @@ npm install -g @angular/cli
             o arquivo Program.cs . Essa caminho é onde está o localizado o projeto .NET6 da api. :</p>
         <p>No arquivo Data/LivrariaDataContext.cs no metodo OnConfiguring realize a seguinte modificação:</p>
         <p>
-```csharp
-protected override void OnConfiguring(DbContextOptionsBuilder options)
-=> options.UseSqlServer("Server=localhost,1433;Database=Livraria;User
-ID=sa;Password=1q2w3e4r@#$;Trusted_Connection=False;TrustServerCertificate=True;");
-```
+            ```csharp
+            protected override void OnConfiguring(DbContextOptionsBuilder options)
+            => options.UseSqlServer("Server=localhost,1433;Database=Livraria;User
+            ID=sa;Password=1q2w3e4r@#$;Trusted_Connection=False;TrustServerCertificate=True;");
+            ```
         </p>
         <p>
-```csharp
-protected override void OnConfiguring(DbContextOptionsBuilder options)
-=> options.UseSqlServer("Sua string de Conexão.");
-```
+            ```csharp
+            protected override void OnConfiguring(DbContextOptionsBuilder options)
+            => options.UseSqlServer("Sua string de Conexão.");
+            ```
         </p>
         <p>Após isso, no diretorio raiz do projeto e utilizando de um terminal de sua escolha, execute os
             seguintes comandos:</p>
         <p>
-```cli
-dotnet build //comando responsavel por carregar compilar a aplicação e carregar as dependências.
-dotnet ef migrations add MigraçãoInicial //comando responsavel por gerar uma migração a ser aplicada
-no banco.
-dotnet ef database update //Comando responsavel por criar o banco de Dados.
-```
+            ```cli
+            dotnet build //comando responsavel por carregar compilar a aplicação e carregar as dependências.
+            dotnet ef migrations add MigraçãoInicial //comando responsavel por gerar uma migração a ser aplicada
+            no banco.
+            dotnet ef database update //Comando responsavel por criar o banco de Dados.
+            ```
         </p>
     </li>
     <li>
@@ -120,9 +120,9 @@ dotnet ef database update //Comando responsavel por criar o banco de Dados.
             projeto Angular. Navegue até o diretório raiz do projeto e execute o seguinte comando no terminal:
         </p>
         <p>
-```cli
-npm install
-```
+            ```cli
+            npm install
+            ```
         </p>
         <p>Este comando instalará todas as dependências necessárias definidas no arquivo package.json.</p>
     </li>
@@ -134,9 +134,9 @@ npm install
         <p>abra em um terminal a raiz do projeto da API (O caminho /LivrariaApi/LivrariaApi onde está o arquivo
             Program.cs) e execute o seguinte comando:</p>
         <p>
-```cli
-dotnet run
-```
+            ```cli
+            dotnet run
+            ```
         </p>
         <p>Caso tudo esteja de acordo a API ira iniciar com endereço: https://localhost:7154 e
             http://localhost:5011</p>
@@ -146,9 +146,9 @@ dotnet run
         <p>Em outro terminal abra a pasta raiz do projeto Angular (o caminho /livrariaMinsaitFront) e execute o
             seguinte comando:</p>
         <p>
-```cli
-ng serve
-```
+            ```cli
+            ng serve
+            ```
         </p>
         <p>Este comando compilará o projeto e executará um servidor de desenvolvimento. O servidor estará
             disponível em http://localhost:4200/. Abra o navegador e navegue até essa URL para ver o projeto em
