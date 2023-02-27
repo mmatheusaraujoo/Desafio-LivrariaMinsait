@@ -1,5 +1,4 @@
 .livros-page-header {
-    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -18,23 +17,46 @@
     height: 4rem;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: flex-start;
+    gap: auto;
+    text-align: center;
 
     background: var(--mat-divider);
     border-bottom: 1px solid var(--mat-primary);
     border-top: 1px solid var(--mat-primary);
 }
 
+.list-header {
+    font-size: 1.1rem;
+    color: var(--mat-primary);
+}
+
 .list-item {
     height: 4rem;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    text-align: center;
 
     background: var(--mat-divider);
-    border-bottom: 1px solid var(--mat-primary);
     border-top: 1px solid var(--mat-primary);
+}
+
+.list-livro {
+    border-top-style: dashed;
     cursor: pointer;
+}
+
+.list-livro:hover {
+    transition: 0.5s;
+    background-color: var(--mat-pink-lighter);
+    color: black;
+    font-weight: 500;
+}
+
+.table-item {
+    flex: 1;
+    align-self: center;
 }
 
 p {
@@ -43,9 +65,7 @@ p {
 
 .action-buttons {
     display: flex;
-    gap: 1rem;
-}
-
-.list-item:hover .list-item {
-    border-color: currentColor;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
 }

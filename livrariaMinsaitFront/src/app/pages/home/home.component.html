@@ -3,15 +3,15 @@
     <div class="home-section">
         <h2>Livros Recentes</h2>
         <mat-divider></mat-divider>
-        <div class="card-list livros-recentes-card-list" *ngFor="let l of livros$ | async">
-            <app-livro-card [livro]="l"></app-livro-card>
+        <div class="card-list livro-list">
+            <app-livro-card class="card-item" *ngFor="let l of livros$ | async" [livro]="l"></app-livro-card>
         </div>
     </div>
     <div class="home-section">
         <h2>Conheça novos autores</h2>
         <mat-divider></mat-divider>
-        <div class="card-list novos-autores-card-list" *ngFor="let a of autores$ | async">
-            <app-autor-card [autor]="a"></app-autor-card>
+        <div class="card-list autor-list">
+            <app-autor-card class="card-item" *ngFor="let a of autores$ | async" [autor]="a"></app-autor-card>
         </div>
     </div>
 </div>

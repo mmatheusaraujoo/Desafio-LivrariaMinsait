@@ -1,10 +1,24 @@
 .card-component {
-    max-width: 300px;
+    max-width: 350px;
     border-radius: 16px;
+    margin: 0 !important;
 }
 
 .card-title {
     color: var(--mat-primary);
+    font-size: 16px;
+    max-height: 32px;
+    overflow: hidden;
+}
+
+.card-image {
+    height: 200px;
+    object-fit: cover;
+}
+
+.livro-resumo {
+    height: 100px;
+    overflow: hidden;
 }
 
 .card-footer {
@@ -12,7 +26,8 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: flex-start;
-    margin: 1rem;
+    margin-top: 1rem;
+    margin-left: 1rem;
     gap: 5px;
     color: var(--mat-primary);
 }

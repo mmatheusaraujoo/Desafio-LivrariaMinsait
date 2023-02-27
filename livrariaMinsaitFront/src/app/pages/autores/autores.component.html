@@ -1,32 +1,34 @@
 <app-navbar></app-navbar>
-<div class="autor-page-container">
-    <h2 class="autor-page-title">Novo Autor</h2>
-    <div class="novo-autor-form mat-primary">
-        <mat-form-field class="form-item form-item-nome">
-            <mat-label>Nome</mat-label>
-            <input type="text" matInput [formControl]="nomeFormControl" [errorStateMatcher]="matcher"
-                placeholder="Ex. Matheus Araújo dos Santos">
-            <mat-error *ngIf="nomeFormControl.hasError('email') && !nomeFormControl.hasError('required')">
-                Por favor digíte um nome válido.
-            </mat-error>
-            <mat-error *ngIf="nomeFormControl.hasError('required')">
-                O Nome é <strong>obrigatório.</strong>
-            </mat-error>
-        </mat-form-field>
-        <mat-form-field class="form-item">
-            <mat-label>Data de Nascimento</mat-label>
-            <input matInput placeholder="Ex. 09/02/1999" placeholder="dd/mm/aaaa">
-        </mat-form-field>
-        <mat-form-field class="form-item">
-            <mat-label>Link da Foto</mat-label>
-            <input matInput placeholder="https://">
-        </mat-form-field>
-        <mat-form-field class="form-item form-item-resumo">
-            <mat-label>Resumo bibliográfico</mat-label>
-            <textarea matInput placeholder="Ex. Lorem ipsum..."></textarea>
-        </mat-form-field>
-
-        <button mat-raised-button color="primary" class="form-button-salvar">Salvar</button>
-
+<div class="autores-page-container">
+    <div class="autores-page-header">
+        <h2>Autores Listados</h2>
+        <button mat-stroked-button color="primary">
+            <mat-icon color="primary">add</mat-icon>
+            Cadastrar Novo Autor
+        </button>
     </div>
+    <mat-divider></mat-divider>
+    <ul class="autores-list">
+        <li class="list-item list-header">
+            <p class="table-item">Id</p>
+            <p class="table-item">Nome</p>
+            <p class="table-item">Data de Nascimento</p>
+            <p class="table-item">Nacionalidade</p>
+            <p class="table-item">Editar/Remover</p>
+        </li>
+        <li class="list-item list-autor" *ngFor="let autor of autores$ | async">
+            <p class="table-item"> {{autor.id}} </p>
+            <p class="table-item"> {{autor.nome}} </p>
+            <p class="table-item"> {{autor.dataDeNascimento}} </p>
+            <p class="table-item"> {{autor.nacionalidade}} </p>
+            <div class="action-buttons table-item">
+                <button mat-mini-fab color="accent" aria-label="Botão com o incone de editar">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-mini-fab color="primary" aria-label="Botão com o incone de deletar">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </div>
+        </li>
+    </ul>
 </div>

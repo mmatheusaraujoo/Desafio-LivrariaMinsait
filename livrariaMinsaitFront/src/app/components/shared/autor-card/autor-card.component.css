@@ -1,7 +1,8 @@
 .autor-card {
-    max-width: 400px;
-    margin-bottom: 8px;
+    width: 400px;
+    margin: 0;
     border-radius: 16px;
+    padding: 0;
 }
 
 .autor-card-title-group {
@@ -12,4 +13,9 @@
 
 .autor-card-image {
     margin: 1rem;
+}
+
+.autor-resumo {
+    height: 100px;
+    overflow: hidden;
 }

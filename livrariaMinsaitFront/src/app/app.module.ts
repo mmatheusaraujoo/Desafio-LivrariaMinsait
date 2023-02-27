@@ -22,6 +22,10 @@ import { MatListModule } from '@angular/material/list';
 import { LivroCardComponent } from './components/shared/livro-card/livro-card.component';
 import { MatCardModule } from '@angular/material/card';
 import { AutorCardComponent } from './components/shared/autor-card/autor-card.component';
+import { NovoAutorFormComponent } from './components/autor/novo-autor-form/novo-autor-form.component';
+import { NovoLivroFormComponent } from './components/livro/novo-livro-form/novo-livro-form.component';
+import { AutorComponent } from './pages/autor/autor.component';
+import { LivroComponent } from './pages/livro/livro.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,11 @@ import { AutorCardComponent } from './components/shared/autor-card/autor-card.co
     LivrosComponent,
     AutoresComponent,
     LivroCardComponent,
-    AutorCardComponent
+    AutorCardComponent,
+    NovoAutorFormComponent,
+    NovoLivroFormComponent,
+    AutorComponent,
+    LivroComponent
   ],
   imports: [
     BrowserModule,

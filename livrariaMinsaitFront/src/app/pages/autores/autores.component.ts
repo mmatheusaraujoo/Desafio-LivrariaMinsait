@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
-import { ErrorStateMatcher } from '@angular/material/core';
-import { nonNumericValidator } from 'src/app/validators';
+import { Observable } from 'rxjs';
+import { autor } from 'src/app/models/autor.models';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-autores',
@@ -9,17 +9,13 @@ import { nonNumericValidator } from 'src/app/validators';
   styleUrls: ['./autores.component.css']
 })
 export class AutoresComponent {
-  nomeFormControl = new FormControl('', [Validators.required, Validators.maxLength(50), nonNumericValidator()]);
-  matcher = new MyErrorStateMatcher();
+  public autores$!: Observable<autor[]>;
 
+  constructor(private data: DataService) {
 
+  }
 
-
-}
-
-export class MyErrorStateMatcher implements ErrorStateMatcher {
-  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
-    const isSubmitted = form && form.submitted;
-    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+  async ngOnInit() {
+    this.autores$ = await this.data.retornarAutores();;
   }
 }
