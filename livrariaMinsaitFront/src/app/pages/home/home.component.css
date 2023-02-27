@@ -1,0 +1,18 @@
+.card-list {
+    margin-top: 2rem;
+}
+
+.livros-recentes-card-list {
+    display: flex;
+    flex-flow: wrap;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.home-container {
+    margin: 0 2rem;
+}
+
+.home-section {
+    margin: 2rem 0;
+}

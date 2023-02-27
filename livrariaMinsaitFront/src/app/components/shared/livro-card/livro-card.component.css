@@ -1,0 +1,22 @@
+.card-component {
+    max-width: 300px;
+    border-radius: 16px;
+}
+
+.card-title {
+    color: var(--mat-primary);
+}
+
+.card-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 1rem;
+    gap: 5px;
+    color: var(--mat-primary);
+}
+
+.card-actions {
+    justify-content: end;
+}

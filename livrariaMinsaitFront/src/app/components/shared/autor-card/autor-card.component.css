@@ -1,0 +1,15 @@
+.autor-card {
+    max-width: 400px;
+    margin-bottom: 8px;
+    border-radius: 16px;
+}
+
+.autor-card-title-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.autor-card-image {
+    margin: 1rem;
+}

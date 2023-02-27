@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+<div class="autor-page-container">
+    <h2 class="autor-page-title">Novo Autor</h2>
+    <div class="novo-autor-form mat-primary">
+        <mat-form-field class="form-item form-item-nome">
+            <mat-label>Nome</mat-label>
+            <input type="text" matInput [formControl]="nomeFormControl" [errorStateMatcher]="matcher"
+                placeholder="Ex. Matheus Araújo dos Santos">
+            <mat-error *ngIf="nomeFormControl.hasError('email') && !nomeFormControl.hasError('required')">
+                Por favor digíte um nome válido.
+            </mat-error>
+            <mat-error *ngIf="nomeFormControl.hasError('required')">
+                O Nome é <strong>obrigatório.</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="form-item">
+            <mat-label>Data de Nascimento</mat-label>
+            <input matInput placeholder="Ex. 09/02/1999" placeholder="dd/mm/aaaa">
+        </mat-form-field>
+        <mat-form-field class="form-item">
+            <mat-label>Link da Foto</mat-label>
+            <input matInput placeholder="https://">
+        </mat-form-field>
+        <mat-form-field class="form-item form-item-resumo">
+            <mat-label>Resumo bibliográfico</mat-label>
+            <textarea matInput placeholder="Ex. Lorem ipsum..."></textarea>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" class="form-button-salvar">Salvar</button>
+
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<app-navbar></app-navbar>
+<div class="home-container">
+    <div class="home-section">
+        <h2>Livros Recentes</h2>
+        <mat-divider></mat-divider>
+        <div class="card-list livros-recentes-card-list" *ngfor="let livro of livros$ | async">
+            <app-livro-card [livro]="livro"></app-livro-card>
+        </div>
+    </div>
+    <div class="home-section">
+        <h2>Conheça novos autores</h2>
+        <mat-divider></mat-divider>
+        <div class="card-list novos-autores-card-list" *ngfor="let autor of autores$ | async">
+            <app-autor-card [autor]="autor"></app-autor-card>
+        </div>
+    </div>
+</div>

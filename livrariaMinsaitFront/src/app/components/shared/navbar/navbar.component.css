@@ -1,0 +1,22 @@
+.navbar-title {
+    margin-left: 2%;
+    font-size: 24px;
+}
+
+.navbar-spacer {
+    flex: 1 1 auto;
+}
+
+.navbar-button-row {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+    margin-right: 2%;
+}
+
+.navbar-link {
+    justify-content: space-around;
+    gap: 12px;
+    font-size: 16px;
+    padding: 20px;
+}

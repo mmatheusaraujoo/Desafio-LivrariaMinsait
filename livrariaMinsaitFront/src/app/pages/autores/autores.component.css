@@ -1,0 +1,31 @@
+.autor-page-container {
+    background-color: var(--mat-background);
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.autor-page-title {
+    color: var(--mat-lighter);
+    font-size: 24px;
+}
+
+.novo-autor-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 75%;
+}
+
+.form-item {
+    width: 50%;
+}
+
+.form-button-salvar {
+    width: 10rem;
+    font-size: 1.2rem;
+}
