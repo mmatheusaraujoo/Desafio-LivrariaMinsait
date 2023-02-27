@@ -99,21 +99,21 @@ npm install -g @angular/cli
     </li>
 </ol>
 
-```
+```csharp
 protected override void OnConfiguring(DbContextOptionsBuilder options)
 => options.UseSqlServer("Server=localhost,1433;Database=Livraria;User
 ID=sa;Password=1q2w3e4r@#$;Trusted_Connection=False;TrustServerCertificate=True;");
 ```
-```
+```csharp
 protected override void OnConfiguring(DbContextOptionsBuilder options)
 => options.UseSqlServer("Sua string de Conexão.");
 ```
-```
+```cli
 dotnet build //comando responsavel por carregar compilar a aplicação e carregar as dependências.
 dotnet ef migrations add MigraçãoInicial //comando responsavel por gerar uma migração a ser aplicada no banco.
 dotnet ef database update //Comando responsavel por criar o banco de Dados.
 ```
-```
+```cli
 npm install
 ```
 
@@ -138,11 +138,11 @@ npm install
     </li>
 </ol>
 
-```
+```cli
 dotnet run
 ```
 
-```
+```cli
 ng serve
 ```
 
