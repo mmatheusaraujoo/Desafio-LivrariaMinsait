@@ -1,2 +1,39 @@
 <app-navbar></app-navbar>
-<p>livros works!</p>
+<div class="livros-page">
+    <div class="livros-page-header">
+        <h2>Livros Listados</h2>
+        <button mat-stroked-button color="primary">
+            <mat-icon color="primary">add</mat-icon>
+            Cadastrar Novo Livro
+        </button>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="list-header">
+        <p>Id</p>
+        <p>Titulo</p>
+        <p>Subtitulo</p>
+        <p>Autor</p>
+        <p>Editora</p>
+        <p>ISBN</p>
+        <p>Editar/Remover</p>
+    </div>
+    <ul class="livros-list" *ngFor="let livro of livros$ | async">
+        <li class="list-item">
+            <p> {{livro.id}} </p>
+            <p> {{livro.titulo}} </p>
+            <p> {{livro.subtitulo}} </p>
+            <p> {{livro.autores[0].nome}} </p>
+            <p> {{livro.editora}} </p>
+            <p> {{livro.isbn}} </p>
+            <div class="action-buttons">
+                <button mat-mini-fab color="accent" aria-label="Icon button with edit icon">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-mini-fab color="primary" aria-label="Icon button with a delete icon">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </div>
+        </li>
+    </ul>
+
+</div>

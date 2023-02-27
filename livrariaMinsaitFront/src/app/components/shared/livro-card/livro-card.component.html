@@ -3,15 +3,15 @@
         <mat-card-title class="card-title"> {{livro.titulo}} </mat-card-title>
         <mat-card-subtitle>{{livro.subtitulo}}</mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image src="{{livro.fotoDaCapa}}" alt="Photo of a Shiba Inu">
+    <img mat-card-image src="{{livro.fotoDaCapa}}" alt="foto da capa do livro {{livro.titulo}}">
     <mat-card-content>
-        <p>{{livro.dataDePublicacao}}</p>
+        <p>{{livro.dataDePublicacao | date}}</p>
         <p>{{livro.resumo}}</p>
         <mat-divider></mat-divider>
     </mat-card-content>
-    <mat-card-footer class="card-footer" *ngFor="let autor in livros.autores">
-        <a href="/autores/{{autor.id}}">
-            {{autor.nome}}
+    <mat-card-footer class="card-footer">
+        <a href="/autores/{{livro.autores[0].id}}">
+            {{livro.autores[0].nome}}
         </a>
     </mat-card-footer>
     <mat-card-actions class="card-actions">

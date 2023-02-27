@@ -1,0 +1,51 @@
+.livros-page-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2rem;
+}
+
+
+.livros-list {
+    display: flex;
+    flex-flow: column;
+    padding: 0;
+    width: 100%;
+}
+
+.list-header {
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    background: var(--mat-divider);
+    border-bottom: 1px solid var(--mat-primary);
+    border-top: 1px solid var(--mat-primary);
+}
+
+.list-item {
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    background: var(--mat-divider);
+    border-bottom: 1px solid var(--mat-primary);
+    border-top: 1px solid var(--mat-primary);
+    cursor: pointer;
+}
+
+p {
+    margin: 0;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.list-item:hover .list-item {
+    border-color: currentColor;
+}
