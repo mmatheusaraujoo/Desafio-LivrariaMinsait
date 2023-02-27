@@ -10,9 +10,6 @@
     <img src="https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white">
 </div>
 
-<p>
-</p>
-
 <p align="center"><img
         src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge">
 
@@ -33,12 +30,10 @@
 <h1>Tecnologias Utilizadas</h1>
 
 <h2>C# / .NET6</h2>
-<p>Linguagem das API's e Framework Utilizado
-<p>
+<p>Linguagem das API's e Framework Utilizado<p>
 
 <h2>Angular</h2>
 <p>Foi utilizado como Framework Front-End</p>
-
 
 <h2>Requisitos do projeto</h2>
 <p>Para confirguração do projeto é necessário os seguintes itens:</p>
@@ -76,9 +71,9 @@
             executar projetos Angular. Você pode instalá-lo globalmente em seu computador usando o seguinte
             comando no terminal
         </p>
-
     </li>
 </ul>
+
 ```
     npm install -g @angular/cli
 ```
