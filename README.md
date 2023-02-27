@@ -78,9 +78,9 @@
         </p>
 
         ```
-            npm install -g @angular/cli
+        npm install -g @angular/cli
         ```
-        
+
     </li>
 </ul>
 <h2>Configurando o projeto</h2>
@@ -92,21 +92,22 @@
         <p>No arquivo Data/LivrariaDataContext.cs no metodo OnConfiguring realize a seguinte modificação:</p>
 
         ```
-            protected override void OnConfiguring(DbContextOptionsBuilder options)
-            => options.UseSqlServer("Server=localhost,1433;Database=Livraria;User
-            ID=sa;Password=1q2w3e4r@#$;Trusted_Connection=False;TrustServerCertificate=True;");
-            ```
-            ```
-            protected override void OnConfiguring(DbContextOptionsBuilder options)
-            => options.UseSqlServer("Sua string de Conexão.");
+        protected override void OnConfiguring(DbContextOptionsBuilder options)
+        => options.UseSqlServer("Server=localhost,1433;Database=Livraria;User
+        ID=sa;Password=1q2w3e4r@#$;Trusted_Connection=False;TrustServerCertificate=True;");
         ```
-        <p>Após isso, no diretorio raiz do projeto e utilizando de um terminal de sua escolha, execute os seguintes comandos:</p>
+        ```
+        protected override void OnConfiguring(DbContextOptionsBuilder options)
+        => options.UseSqlServer("Sua string de Conexão.");
+        ```
+        <p>Após isso, no diretorio raiz do projeto e utilizando de um terminal de sua escolha, execute os seguintes
+            comandos:</p>
 
         ```
-            dotnet build //comando responsavel por carregar compilar a aplicação e carregar as dependências.
-            dotnet ef migrations add MigraçãoInicial //comando responsavel por gerar uma migração a ser aplicada
-            no banco.
-            dotnet ef database update //Comando responsavel por criar o banco de Dados.
+        dotnet build //comando responsavel por carregar compilar a aplicação e carregar as dependências.
+        dotnet ef migrations add MigraçãoInicial //comando responsavel por gerar uma migração a ser aplicada
+        no banco.
+        dotnet ef database update //Comando responsavel por criar o banco de Dados.
         ```
     </li>
     <li>
@@ -115,7 +116,7 @@
             projeto Angular. Navegue até o diretório raiz do projeto e execute o seguinte comando no terminal:
         </p>
         ```
-            npm install
+        npm install
         ```
         <p>Este comando instalará todas as dependências necessárias definidas no arquivo package.json.</p>
     </li>
@@ -128,7 +129,7 @@
             Program.cs) e execute o seguinte comando:</p>
 
         ```
-            dotnet run
+        dotnet run
         ```
 
         <p>Caso tudo esteja de acordo a API ira iniciar com endereço: https://localhost:7154 e
@@ -140,7 +141,7 @@
             seguinte comando:</p>
 
         ```
-            ng serve
+        ng serve
         ```
 
         <p>Este comando compilará o projeto e executará um servidor de desenvolvimento. O servidor estará
