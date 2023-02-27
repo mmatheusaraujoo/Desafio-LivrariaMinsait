@@ -12,7 +12,7 @@ export class livro {
     public isbn: string;
     public quantidadeEmEstoque: number;
     public fotoDaCapa: string;
-    public autores: autor[]
+    public autores: autor[] = [];
 
     constructor(
         id: number,
@@ -39,6 +39,6 @@ export class livro {
         this.isbn = isbn;
         this.quantidadeEmEstoque = quantidadeEmEstoque;
         this.fotoDaCapa = fotoDaCapa;
-        this.autores = autores;
+        this.autores = autores || [];
     }
 }

@@ -11,9 +11,9 @@ export class DataService {
   constructor(private http: HttpClient) { }
 
   retornarAutores() {
-    return this.http.get<autor[]>('https://localhost:7154/Autor')
+    return this.http.get<autor[]>('http://localhost:5011/Autor')
   }
   retornarLivros() {
-    return this.http.get<livro[]>('https://localhost:7154/Livro')
+    return this.http.get<livro[]>('http://localhost:5011/Livro')
   }
 }
