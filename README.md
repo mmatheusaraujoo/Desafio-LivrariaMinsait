@@ -55,8 +55,7 @@
         <p>
         NAngular CLI: o Angular CLI é uma ferramenta de linha de comando usada para gerar, construir e executar projetos Angular. Você pode instalá-lo globalmente em seu computador usando o seguinte comando no terminal: 
         </p>
-        <p>
-        ```cli
+        <p>```cli
             npm install -g @angular/cli
         ```
         </p>
