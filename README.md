@@ -74,7 +74,7 @@
         <p>
             NAngular CLI: o Angular CLI é uma ferramenta de linha de comando usada para gerar, construir e
             executar projetos Angular. Você pode instalá-lo globalmente em seu computador usando o seguinte
-            comando no terminal:
+            comando no terminal
         </p>
 
     </li>
@@ -87,8 +87,8 @@
     <li>
         <h3>Configurando API e Banco de Dados</h3>
         <p>Para configuração do projeto abra, em um editor de codigo, a pagina LivrariaApi/livrariaApi onde está
-            o arquivo Program.cs . Essa caminho é onde está o localizado o projeto .NET6 da api. :</p>
-        <p>No arquivo Data/LivrariaDataContext.cs no metodo OnConfiguring realize a seguinte modificação:</p>
+            o arquivo Program.cs . Essa caminho é onde está o localizado o projeto .NET6 da api.</p>
+        <p>No arquivo Data/LivrariaDataContext.cs no metodo OnConfiguring realize a seguinte modificação</p>
 
         ```
             protected override void OnConfiguring(DbContextOptionsBuilder options)
@@ -103,7 +103,7 @@
 
         <p>
             Após isso, no diretorio raiz do projeto e utilizando de um terminal de sua escolha, execute os
-            seguintescomandos:
+            seguintescomandos
         </p>
         
         ```
@@ -116,7 +116,7 @@
     <li>
         <h3>Configurando Front-End Angular</h3>
         <p>Depois de ter instalado os requisitos citados anteriormente, você precisa instalar as dependências do
-            projeto Angular. Navegue até o diretório raiz do projeto e execute o seguinte comando no terminal:
+            projeto Angular. Navegue até o diretório raiz do projeto e execute o seguinte comando no terminal
         </p>
         
             ```
@@ -132,7 +132,7 @@
         <h3>API .NET</h3>
         <p>
             abra em um terminal a raiz do projeto da API (O caminho /LivrariaApi/LivrariaApi onde está o arquivo
-            Program.cs) e execute o seguinte comando:
+            Program.cs) e execute o seguinte comando.
         </p>
 
             ```
@@ -145,7 +145,7 @@
     <li>
         <h3>Front-End Angular</h3>
         <p>Em outro terminal abra a pasta raiz do projeto Angular (o caminho /livrariaMinsaitFront) e execute o
-            seguinte comando:</p>
+            seguinte comando.</p>
         
             ```
                 ng serve
