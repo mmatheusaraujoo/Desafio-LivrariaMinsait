@@ -1,0 +1,40 @@
+<h1 class="page-title">
+    Cadastrar Novo Autor
+</h1>
+<form class="novo-autor-form mat-primary" [formGroup]="form">
+    <mat-form-field class="form-item form-item-nome">
+        <mat-label>Nome</mat-label>
+        <input type="text" matInput formControlName="nome" placeholder="Ex. Matheus Araújo dos Santos">
+        <mat-error *ngIf="(form.controls['nome'].value == '')">
+            *O <strong>Nome</strong> é obrigatório.
+        </mat-error>
+        <mat-error
+            *ngIf="(form.controls['nome'].invalid && !form.controls['nome'].pristine && form.controls['nome'].value != '')">
+            *Por favor digíte um nome válido.
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance='fill' class="form-item">
+        <mat-label>Data</mat-label>
+        <input matInput formControlName="data" [matDatepicker]="picker">
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-hint>MM/DD/AAAA</mat-hint>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="form.controls['data'].invalid">
+            A data deve estar no formato MM/DD/AAAA.
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field class="form-item">
+        <mat-label>Link da Foto</mat-label>
+        <input matInput placeholder="https://">
+    </mat-form-field>
+    <mat-form-field class="form-item form-item-resumo">
+        <mat-label>Resumo bibliográfico</mat-label>
+        <textarea matInput placeholder="Ex. Lorem ipsum..."></textarea>
+    </mat-form-field>
+    <div class="form-item form-button-list">
+        <a mat-raised-button class="form-button" href="/Autores">
+            Cancelar
+        </a>
+        <button mat-raised-button color="primary" class="form-button" [disabled]="form.invalid">Salvar</button>
+    </div>
+</form>

@@ -5,6 +5,8 @@ import { AutoresComponent } from './pages/autores/autores.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LivroComponent } from './pages/livro/livro.component';
 import { LivrosComponent } from './pages/livros/livros.component';
+import { NovoAutorComponent } from './pages/novo-autor/novo-autor.component';
+import { NovoLivroComponent } from './pages/novo-livro/novo-livro.component';
 
 const routes: Routes = [
   {
@@ -20,12 +22,20 @@ const routes: Routes = [
     component: AutoresComponent
   },
   {
-    path: 'Autores/{id}',
+    path: 'Autor/{id}',
     component: AutorComponent
   },
   {
-    path: 'Livros/{id}',
+    path: 'Livro/{id}',
     component: LivroComponent
+  },
+  {
+    path: 'Autor/Novo-Autor',
+    component: NovoAutorComponent
+  },
+  {
+    path: 'Livro/Novo-Livro',
+    component: NovoLivroComponent
   }
 ];
 

@@ -1,3 +1,5 @@
+@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
+
 :root {
     --mat-pink: #e91e63;
     --mat-pink-lighter: #f06292;
