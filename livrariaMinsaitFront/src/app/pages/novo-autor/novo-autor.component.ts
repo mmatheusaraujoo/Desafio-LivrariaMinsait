@@ -46,10 +46,10 @@ export class NovoAutorComponent implements OnInit {
 
   async submit() {
     let formValue = this.form.value;
-    let resultadoDoDialogo = await this.dialogoService.abrirDialogo("Deseja salvar o autor: " + formValue.nome)
+    let resultadoDoDialogo = await this.dialogoService.abrirDialogo("Deseja salvar o autor: " + formValue.nome);
     if (resultadoDoDialogo) {
-      if (formValue.dataDeNascimento === '') {
-        delete formValue.dataDeNascimento;
+      if (formValue.dataDeNascimento == '') {
+        formValue.dataDeNascimento = null;
       }
       this
         .livrariaService
@@ -62,7 +62,6 @@ export class NovoAutorComponent implements OnInit {
             console.log(err);
           }
         );
-      window.history.back();
     }
   }
 }

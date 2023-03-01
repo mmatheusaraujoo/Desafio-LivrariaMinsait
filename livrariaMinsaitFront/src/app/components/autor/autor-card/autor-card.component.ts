@@ -9,5 +9,14 @@ import { autor } from 'src/app/models/autor.models';
 export class AutorCardComponent {
   @Input() public autor!: autor;
 
-  constructor() { }
+  constructor() {
+  }
+
+  testaFoto() {
+    if (this.autor.foto != '' || this.autor.foto == null) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }

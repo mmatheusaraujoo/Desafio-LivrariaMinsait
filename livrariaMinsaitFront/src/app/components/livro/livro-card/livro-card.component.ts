@@ -11,6 +11,5 @@ export class LivroCardComponent {
   @Input() public livro!: livro;
 
   constructor() {
-
   }
 }
