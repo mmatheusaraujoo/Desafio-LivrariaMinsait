@@ -55,11 +55,14 @@ export class NovoAutorComponent implements OnInit {
         .livrariaService
         .cadastraAutor(formValue)
         .subscribe(
-          (data) => {
+          async (data) => {
             console.log(data);
+            await this.dialogoService.abrirMensagem('Criado.', 'Autor "' + formValue.nome + '" criado com sucesso!');
+            window.history.back();
           },
           (err) => {
             console.log(err);
+            this.dialogoService.abrirMensagem('Desculpe!', 'Não foi possível cadastrar o autor. Para mais informações acesse o "ConsoleLog" do seu navegador.');
           }
         );
     }

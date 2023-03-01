@@ -30,6 +30,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { CaixaDeDialogoComponent } from './components/shared/caixa-de-dialogo/caixa-de-dialogo.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { CaixaDeMensagemComponent } from './components/shared/caixa-de-mensagem/caixa-de-mensagem.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     LivroComponent,
     NovoAutorComponent,
     NovoLivroComponent,
-    CaixaDeDialogoComponent
+    CaixaDeDialogoComponent,
+    CaixaDeMensagemComponent
   ],
   imports: [
     BrowserModule,

@@ -11,12 +11,18 @@
     justify-content: space-between;
 }
 
+.autor-nome:hover {
+    transition: 0.2s;
+    color: var(--mat-primary);
+}
+
 .autor-card-image {
     margin: 1rem;
 }
 
 .autor-resumo {
     margin-bottom: 10px;
+    margin-top: 10px;
     height: 100px;
     overflow: hidden;
 }
