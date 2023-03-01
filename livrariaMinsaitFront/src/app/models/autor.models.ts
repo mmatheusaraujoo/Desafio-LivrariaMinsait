@@ -24,4 +24,5 @@ export class autor {
         this.foto = foto;
         this.autores = autores;
     }
+
 }

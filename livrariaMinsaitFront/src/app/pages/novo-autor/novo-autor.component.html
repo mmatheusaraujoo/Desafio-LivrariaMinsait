@@ -5,6 +5,7 @@
     <mat-form-field class="form-item form-item-nome">
         <mat-label>Nome</mat-label>
         <input type="text" matInput formControlName="nome" placeholder="Ex. Matheus Araújo dos Santos">
+        <mat-hint>*Campo obrigatório.</mat-hint>
         <mat-error *ngIf="(form.controls['nome'].value == '')">
             *O <strong>Nome</strong> é obrigatório.
         </mat-error>
@@ -14,27 +15,33 @@
         </mat-error>
     </mat-form-field>
     <mat-form-field appearance='fill' class="form-item">
-        <mat-label>Data</mat-label>
-        <input matInput formControlName="data" [matDatepicker]="picker">
-        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-hint>MM/DD/AAAA</mat-hint>
-        <mat-datepicker #picker></mat-datepicker>
-        <mat-error *ngIf="form.controls['data'].invalid">
-            A data deve estar no formato MM/DD/AAAA.
+        <mat-label>Data de nascimento</mat-label>
+        <input matInput type="date" formControlName="dataDeNascimento">
+        <mat-error *ngIf="!form.controls['dataDeNascimento'].valid">
+            *Digite uma data válida.
         </mat-error>
     </mat-form-field>
     <mat-form-field class="form-item">
+        <mat-label>Nacionalidade</mat-label>
+        <input matInput formControlName='nacionalidade' placeholder="Brasileiro">
+        <mat-error *ngIf="form.controls['nacionalidade'].invalid">*Digite uma nacionalidade válida.</mat-error>
+    </mat-form-field>
+    <mat-form-field class="form-item">
         <mat-label>Link da Foto</mat-label>
-        <input matInput placeholder="https://">
+        <input matInput formControlName='foto' placeholder="https://">
+        <mat-error *ngIf="form.controls['foto'].invalid">*Digite um Link válido.</mat-error>
     </mat-form-field>
     <mat-form-field class="form-item form-item-resumo">
         <mat-label>Resumo bibliográfico</mat-label>
-        <textarea matInput placeholder="Ex. Lorem ipsum..."></textarea>
+        <textarea matInput formControlName='resumoBibliografico' placeholder="Ex. Lorem ipsum..."></textarea>
+        <mat-error *ngIf="form.controls['resumoBibliografico'].invalid">*O texto ultrapassa o tamanho max de 1200
+            caracteres.</mat-error>
     </mat-form-field>
     <div class="form-item form-button-list">
         <a mat-raised-button class="form-button" href="/Autores">
             Cancelar
         </a>
-        <button mat-raised-button color="primary" class="form-button" [disabled]="form.invalid">Salvar</button>
+        <button mat-raised-button color="primary" class="form-button" [disabled]="form.invalid"
+            (click)="submit()">Salvar</button>
     </div>
 </form>

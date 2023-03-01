@@ -16,4 +16,7 @@ export class DataService {
   retornarLivros() {
     return this.http.get<livro[]>('http://localhost:5011/Livro')
   }
+  cadastraAutor(object: object) {
+    return this.http.post('http://localhost:5011/Autor', object)
+  }
 }

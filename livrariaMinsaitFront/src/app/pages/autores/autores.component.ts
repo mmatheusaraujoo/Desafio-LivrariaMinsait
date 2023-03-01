@@ -16,6 +16,6 @@ export class AutoresComponent {
   }
 
   async ngOnInit() {
-    this.autores$ = await this.data.retornarAutores();;
+    this.autores$ = await this.data.retornarAutores();
   }
 }
