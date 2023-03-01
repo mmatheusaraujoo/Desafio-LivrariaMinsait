@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm, Validators } from '@angular/forms';
-import { MatDatepickerInputEvent } from '@angular/material/datepicker';
-import { FuncoesUteis } from 'src/app/funcoes-uteis';
-import { autor } from 'src/app/models/autor.models';
+import { MatDialog } from '@angular/material/dialog';
 import { DataService } from 'src/app/services/data.service';
+import { DialogoService } from 'src/app/services/dialogo.service';
 import { DateValidator, nonNumericValidator } from 'src/app/validators';
 
 @Component({
@@ -16,7 +15,8 @@ export class NovoAutorComponent implements OnInit {
 
   constructor(
     private livrariaService: DataService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private dialogoService: DialogoService
   ) {
     this.form = this.fb.group({
       nome: ['', Validators.compose([
@@ -46,20 +46,24 @@ export class NovoAutorComponent implements OnInit {
 
   async submit() {
     let formValue = this.form.value;
-    if (formValue.dataDeNascimento === '') {
-      delete formValue.dataDeNascimento;
+    let resultadoDoDialogo = await this.dialogoService.abrirDialogo("Deseja salvar o autor: " + formValue.nome)
+    if (resultadoDoDialogo) {
+      if (formValue.dataDeNascimento === '') {
+        delete formValue.dataDeNascimento;
+      }
+      this
+        .livrariaService
+        .cadastraAutor(formValue)
+        .subscribe(
+          (data) => {
+            console.log(data);
+          },
+          (err) => {
+            console.log(err);
+          }
+        );
+      window.history.back();
     }
-    this
-      .livrariaService
-      .cadastraAutor(formValue)
-      .subscribe(
-        (data) => {
-          console.log(data);
-        },
-        (err) => {
-          console.log(err);
-        }
-      );
   }
 }
 

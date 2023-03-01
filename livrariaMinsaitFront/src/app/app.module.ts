@@ -28,6 +28,8 @@ import { NovoAutorComponent } from './pages/novo-autor/novo-autor.component';
 import { NovoLivroComponent } from './pages/novo-livro/novo-livro.component';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { CaixaDeDialogoComponent } from './components/shared/caixa-de-dialogo/caixa-de-dialogo.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -42,7 +44,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     AutorComponent,
     LivroComponent,
     NovoAutorComponent,
-    NovoLivroComponent
+    NovoLivroComponent,
+    CaixaDeDialogoComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +66,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     MatListModule,
     MatCardModule,
     MatNativeDateModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
