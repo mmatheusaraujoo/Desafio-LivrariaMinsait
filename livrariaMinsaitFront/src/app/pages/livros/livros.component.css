@@ -66,6 +66,7 @@ p {
 .action-buttons {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 20px;
     text-align: center;
 }
