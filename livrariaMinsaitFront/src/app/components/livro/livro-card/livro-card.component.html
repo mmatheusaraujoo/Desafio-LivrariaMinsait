@@ -9,7 +9,7 @@
         <p class="livro-resumo">{{livro.resumo}}</p>
         <mat-divider></mat-divider>
     </mat-card-content>
-    <mat-card-footer class="card-footer">
+    <mat-card-footer class="card-footer" *ngIf="livro.autores != null">
         <a href="/Autor/{{livro.autores[0].id}}">
             {{livro.autores[0].nome}}
         </a>

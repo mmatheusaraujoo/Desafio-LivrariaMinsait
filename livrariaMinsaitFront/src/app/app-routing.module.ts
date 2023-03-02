@@ -22,7 +22,7 @@ const routes: Routes = [
     component: AutoresComponent
   },
   {
-    path: 'Autor/{id}',
+    path: 'Autor/:id',
     component: AutorComponent
   },
   {

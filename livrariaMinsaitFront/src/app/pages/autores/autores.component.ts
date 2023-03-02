@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { autor } from 'src/app/models/autor.models';
 import { DataService } from 'src/app/services/data.service';
@@ -14,7 +15,8 @@ export class AutoresComponent {
 
   constructor(
     private data: DataService,
-    private dialogoService: DialogoService) {
+    private dialogoService: DialogoService,
+    private router: Router) {
 
   }
 
@@ -40,6 +42,12 @@ export class AutoresComponent {
           }
         );
     }
+  }
+
+  abrirPaginaAutor(autor: autor) {
+    console.log(autor);
+    let rota = '/Autor/' + autor.id;
+    this.router.navigate([rota]);
   }
 
 }

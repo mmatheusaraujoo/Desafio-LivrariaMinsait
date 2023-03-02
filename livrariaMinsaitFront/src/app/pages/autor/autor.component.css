@@ -1,0 +1,31 @@
+.autor-conteudo {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 10% 0;
+
+}
+
+.conteudo-texto {
+    width: 600px;
+    display: flex;
+    flex-flow: column;
+}
+
+.autor-nome {
+    margin: 0;
+
+    font-size: 32px;
+    color: var(--mat-primary);
+    font-weight: 600;
+}
+
+.autor-resumo {
+    margin: 0;
+    text-align: justify;
+    font-size: 18px;
+}
+
+.autor-foto {
+    border-radius: 50%;
+}

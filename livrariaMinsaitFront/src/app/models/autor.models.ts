@@ -1,3 +1,5 @@
+import { livro } from "./livro.models";
+
 export class autor {
     public id: number;
     public nome: string;
@@ -5,7 +7,7 @@ export class autor {
     public nacionalidade: string;
     public resumoBibliografico: string;
     public foto: string;
-    public autores: autor[];
+    public livros: livro[];
 
     constructor(
         id: number,
@@ -14,7 +16,7 @@ export class autor {
         nacionalidade: string,
         resumoBibliografico: string,
         foto: string,
-        autores: autor[]
+        livros: livro[]
     ) {
         this.id = id;
         this.nome = nome;
@@ -22,7 +24,7 @@ export class autor {
         this.nacionalidade = nacionalidade;
         this.resumoBibliografico = resumoBibliografico;
         this.foto = foto;
-        this.autores = autores;
+        this.livros = livros;
     }
 
 }

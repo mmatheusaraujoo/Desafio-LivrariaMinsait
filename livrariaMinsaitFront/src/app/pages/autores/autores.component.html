@@ -18,7 +18,7 @@
             <p class="table-item">Nacionalidade</p>
             <p class="table-item">Editar/Remover</p>
         </li>
-        <li class="list-item list-autor" *ngFor="let autor of autores$ | async">
+        <li class="list-item list-autor" *ngFor="let autor of autores$ | async" (click)="abrirPaginaAutor(autor)">
             <p class="table-item"> {{autor.id}} </p>
             <p class="table-item"> {{autor.nome}} </p>
             <p class="table-item"> {{autor.dataDeNascimento}} </p>
@@ -28,7 +28,7 @@
                     <mat-icon>edit</mat-icon>
                 </button>
                 <button mat-mini-fab color="primary" aria-label="Botão com o incone de deletar"
-                    (click)="deletarAutor(autor)">
+                    (click)="deletarAutor(autor);$event.stopPropagation()">
                     <mat-icon>delete</mat-icon>
                 </button>
             </div>

@@ -16,6 +16,9 @@ export class DataService {
   retornarAutores() {
     return this.http.get<autor[]>(this.url + '/Autor');
   }
+  retornarAutor(id: number) {
+    return this.http.get<autor>(this.url + '/Autor/' + id);
+  }
   retornarLivros() {
     return this.http.get<livro[]>(this.url + '/Livro');
   }
