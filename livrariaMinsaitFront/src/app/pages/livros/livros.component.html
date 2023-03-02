@@ -16,6 +16,7 @@
             <p class="table-item">Titulo</p>
             <p class="table-item">Subtitulo</p>
             <p class="table-item">Autor</p>
+            <p class="table-item">Data de Publicação</p>
             <p class="table-item">Editora</p>
             <p class="table-item">ISBN</p>
             <p class="table-item">Quantidade em Estoque</p>
@@ -26,6 +27,7 @@
             <p class="table-item"> {{livro.titulo}} </p>
             <p class="table-item"> {{livro.subtitulo}} </p>
             <p class="table-item"> {{livro.autores[0].nome}} </p>
+            <p class="table-item"> {{livro.dataDePublicacao | date:'dd-MM-yyyy'}} </p>
             <p class="table-item"> {{livro.editora}} </p>
             <p class="table-item"> {{livro.isbn}} </p>
             <p class="table-item"> {{livro.quantidadeEmEstoque}} </p>

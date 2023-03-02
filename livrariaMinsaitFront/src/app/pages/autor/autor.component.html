@@ -1,12 +1,13 @@
 <app-navbar></app-navbar>
 <div class="pagina-conteudo" *ngIf="(autor$ | async) as autor">
     <div class="autor-conteudo">
+        <img src="{{autor.foto}}" alt="Foto de {{autor.nome}}" class="autor-foto" width="300">
         <div class="conteudo-texto">
             <h1 class="autor-nome">{{autor.nome}}</h1>
-            <h3 class="autor-nacionalidade">{{autor.nacionalidade}}, {{autor.dataDeNascimento}}</h3>
+            <h3 class="autor-nacionalidade">{{autor.nacionalidade}}, {{autor.dataDeNascimento | date:'dd-MM-yyyy'}}
+            </h3>
             <p class="autor-resumo">{{autor.resumoBibliografico}}</p>
         </div>
-        <img src="{{autor.foto}}" alt="Foto de {{autor.nome}}" class="autor-foto" width="300">
     </div>
     <div class="autor-livros">
         <h2>Livros</h2>

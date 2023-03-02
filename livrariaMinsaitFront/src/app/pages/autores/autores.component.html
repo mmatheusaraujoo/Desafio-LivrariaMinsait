@@ -21,7 +21,7 @@
         <li class="list-item list-autor" *ngFor="let autor of autores$ | async" (click)="abrirPaginaAutor(autor)">
             <p class="table-item"> {{autor.id}} </p>
             <p class="table-item"> {{autor.nome}} </p>
-            <p class="table-item"> {{autor.dataDeNascimento}} </p>
+            <p class="table-item"> {{autor.dataDeNascimento | date:'dd-MM-yyyy'}} </p>
             <p class="table-item"> {{autor.nacionalidade}} </p>
             <div class="action-buttons table-item">
                 <button mat-mini-fab color="accent" aria-label="Botão com o incone de editar">

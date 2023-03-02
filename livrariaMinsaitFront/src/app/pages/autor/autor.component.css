@@ -1,15 +1,20 @@
+.pagina-conteudo {
+    margin: 10% 10% 0;
+    display: flex;
+    flex-flow: column;
+    gap: 50px;
+}
+
 .autor-conteudo {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin: 10% 0;
+    gap: 5%;
 
 }
 
 .conteudo-texto {
-    width: 600px;
-    display: flex;
-    flex-flow: column;
+    overflow: hidden;
 }
 
 .autor-nome {
@@ -27,5 +32,6 @@
 }
 
 .autor-foto {
+
     border-radius: 50%;
 }
