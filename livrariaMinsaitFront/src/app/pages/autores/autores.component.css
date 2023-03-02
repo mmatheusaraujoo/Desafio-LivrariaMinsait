@@ -5,6 +5,18 @@
     margin: 2rem;
 }
 
+.input-filtro {
+    width: 30%;
+    padding: 15px;
+    background: transparent;
+    border: solid var(--mat-divider);
+    border-radius: 10px;
+    font-size: 16px;
+
+    color: white;
+
+}
+
 
 .autores-list {
     display: flex;
@@ -27,7 +39,12 @@
 }
 
 .list-header {
-    font-size: 1.1rem;
+    font-size: 16px;
+    color: var(--mat-primary);
+}
+
+.list-header button {
+    font-size: 16px;
     color: var(--mat-primary);
 }
 

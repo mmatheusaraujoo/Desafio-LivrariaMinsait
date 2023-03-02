@@ -10,8 +10,10 @@
         </div>
     </div>
     <div class="autor-livros">
-        <h2>Livros</h2>
+        <h2 class="livros-titulo">Livros</h2>
         <mat-divider></mat-divider>
-        <app-livro-card *ngFor="let l of autor.livros" [livro]="l"></app-livro-card>
+        <div class="livros-lista">
+            <app-livro-card *ngFor="let l of autor.livros" [livro]="l"></app-livro-card>
+        </div>
     </div>
 </div>

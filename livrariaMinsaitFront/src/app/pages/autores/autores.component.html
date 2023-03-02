@@ -1,7 +1,9 @@
 <app-navbar></app-navbar>
 <div class="autores-page-container">
     <div class="autores-page-header">
-        <h2>Autores Listados</h2>
+        <h1>Autores Listados</h1>
+        <input matInput type="text" [(ngModel)]="termoDePesquisa" placeholder="Pesquisar autores"
+            (input)="filtrarAutores()" class="input-filtro">
         <a href="/Autor/Novo-Autor">
             <button mat-stroked-button color="primary">
                 <mat-icon color="primary">add</mat-icon>
@@ -12,13 +14,14 @@
     <mat-divider></mat-divider>
     <ul class="autores-list">
         <li class="list-item list-header">
-            <p class="table-item">Id</p>
-            <p class="table-item">Nome</p>
-            <p class="table-item">Data de Nascimento</p>
-            <p class="table-item">Nacionalidade</p>
+            <button mat-button color="primary" class="table-item" (click)="ordenarPorId()">Id</button>
+            <button mat-button color="primary" class="table-item" (click)="ordenarPorNome()">Nome</button>
+            <button mat-button color="primary" class="table-item" (click)="ordenarPorData()">Data de Nascimento</button>
+            <button mat-button color="primary" class="table-item"
+                (click)="ordenarPorNacionalidade()">Nacionalidade</button>
             <p class="table-item">Editar/Remover</p>
         </li>
-        <li class="list-item list-autor" *ngFor="let autor of autores$ | async" (click)="abrirPaginaAutor(autor)">
+        <li class="list-item list-autor" *ngFor="let autor of autores" (click)="abrirPaginaAutor(autor)">
             <p class="table-item"> {{autor.id}} </p>
             <p class="table-item"> {{autor.nome}} </p>
             <p class="table-item"> {{autor.dataDeNascimento | date:'dd-MM-yyyy'}} </p>

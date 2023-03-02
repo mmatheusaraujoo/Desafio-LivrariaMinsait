@@ -12,6 +12,9 @@ import { DialogoService } from 'src/app/services/dialogo.service';
 })
 export class AutoresComponent {
   public autores$!: Observable<autor[]>;
+  public autoresOriginal: autor[] = [];
+  public autores: autor[] = [];
+  public termoDePesquisa: string = '';
 
   constructor(
     private data: DataService,
@@ -22,6 +25,10 @@ export class AutoresComponent {
 
   async ngOnInit() {
     this.autores$ = await this.data.retornarAutores();
+    this.autores$.subscribe(autores => {
+      this.autores = autores;
+      this.autoresOriginal = autores;
+    });
   }
 
   async deletarAutor(autor: autor) {
@@ -48,6 +55,39 @@ export class AutoresComponent {
     console.log(autor);
     let rota = '/Autor/' + autor.id;
     this.router.navigate([rota]);
+  }
+
+  ordenarPorNome() {
+    this.autores = this.autores.sort((a, b) => {
+      if (a.nome < b.nome) { return -1; }
+      if (a.nome > b.nome) { return 1; }
+      return 0;
+    });
+  }
+
+  ordenarPorId() {
+    this.autores = this.autores.sort((a, b) => a.id - b.id);
+  }
+
+  ordenarPorNacionalidade() {
+    this.autores = this.autores.sort((a, b) => {
+      if (a.nacionalidade < b.nacionalidade) { return -1; }
+      if (a.nacionalidade > b.nacionalidade) { return 1; }
+      return 0;
+    });
+  }
+
+  ordenarPorData() {
+    this.autores = this.autores.sort((a, b) => new Date(a.dataDeNascimento).getTime() - new Date(b.dataDeNascimento).getTime());
+  }
+
+
+  filtrarAutores() {
+    if (this.termoDePesquisa != '') {
+      this.autores = this.autores.filter(autor => autor.nome.toLowerCase().includes(this.termoDePesquisa.toLowerCase()));
+    } else {
+      this.autores = this.autoresOriginal;
+    }
   }
 
 }
