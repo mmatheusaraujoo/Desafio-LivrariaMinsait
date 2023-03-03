@@ -56,7 +56,7 @@ export class EditarAutorComponent {
       if (this.autor) {
         this.form.patchValue({
           nome: this.autor?.nome,
-          dataDeNascimento: this.autor?.dataDeNascimento,
+          dataDeNascimento: this.autor?.dataDeNascimento ? new Date(this.autor.dataDeNascimento).toISOString().slice(0, 10) : '',
           nacionalidade: this.autor?.nacionalidade,
           foto: this.autor?.foto,
           resumoBibliografico: this.autor?.resumoBibliografico

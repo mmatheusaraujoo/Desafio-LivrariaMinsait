@@ -1,7 +1,15 @@
-<h1 class="page-title">
+<h1 class="page-title" *ngIf="autor != null">
     Editar autor
 </h1>
-<form class="novo-autor-form mat-primary" [formGroup]="form">
+<div *ngIf="autor == null" style="display: flex; flex-flow: column; align-items: center;">
+    <h1 class="page-title">
+        Erro 404: Autor não encontrado!
+    </h1>
+    <a mat-raised-button class="form-button" href="/autores">
+        Voltar
+    </a>
+</div>
+<form class="novo-autor-form mat-primary" [formGroup]="form" *ngIf="autor != null">
     <mat-form-field class="form-item form-item-nome">
         <mat-label>Nome</mat-label>
         <input type="text" matInput formControlName="nome" placeholder="Ex. Matheus Araújo dos Santos">
