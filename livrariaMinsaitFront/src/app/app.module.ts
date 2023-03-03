@@ -31,6 +31,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { CaixaDeDialogoComponent } from './components/shared/caixa-de-dialogo/caixa-de-dialogo.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CaixaDeMensagemComponent } from './components/shared/caixa-de-mensagem/caixa-de-mensagem.component';
+import { EditarAutorComponent } from './pages/editar-autor/editar-autor.component';
+import { EditarLivroComponent } from './pages/editar-livro/editar-livro.component';
 
 
 @NgModule({
@@ -47,7 +49,9 @@ import { CaixaDeMensagemComponent } from './components/shared/caixa-de-mensagem/
     NovoAutorComponent,
     NovoLivroComponent,
     CaixaDeDialogoComponent,
-    CaixaDeMensagemComponent
+    CaixaDeMensagemComponent,
+    EditarAutorComponent,
+    EditarLivroComponent
   ],
   imports: [
     BrowserModule,

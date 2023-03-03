@@ -38,9 +38,10 @@
             <p class="table-item"> {{autor.dataDeNascimento | date:'dd-MM-yyyy'}} </p>
             <p class="table-item"> {{autor.nacionalidade}} </p>
             <div class="action-buttons table-item">
-                <button mat-mini-fab color="accent" aria-label="Botão com o incone de editar">
+                <a mat-mini-fab color="accent" aria-label="Botão com o incone de editar"
+                    href="/autor/editar-autor/{{autor.id}}" (click)="$event.stopPropagation()">
                     <mat-icon>edit</mat-icon>
-                </button>
+                </a>
                 <button mat-mini-fab color="primary" aria-label="Botão com o incone de deletar"
                     (click)="deletarAutor(autor);$event.stopPropagation()">
                     <mat-icon>delete</mat-icon>

@@ -20,8 +20,6 @@ export class AutorComponent {
   async ngOnInit() {
     const id = this.route.snapshot.params['id'];
     this.autor$ = await this.data.retornarAutor(id);
-    let teste = this.autor$.toPromise();
-    console.log(teste);
   }
 
 }
