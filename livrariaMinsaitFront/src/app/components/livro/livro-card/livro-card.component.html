@@ -10,12 +10,12 @@
         <mat-divider></mat-divider>
     </mat-card-content>
     <mat-card-footer class="card-footer" *ngIf="livro.autores != null">
-        <a href="/Autor/{{livro.autores[0].id}}">
+        <a href="/autor/detalhes/{{livro.autores[0].id}}">
             {{livro.autores[0].nome}}
         </a>
     </mat-card-footer>
     <mat-card-actions class="card-actions">
-        <a href="/Livro/{{livro.id}}">
+        <a href="/livro/{{livro.id}}">
             <button mat-button>SAIBA MAIS</button>
         </a>
     </mat-card-actions>

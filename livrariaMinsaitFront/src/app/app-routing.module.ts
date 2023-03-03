@@ -14,27 +14,27 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'Livros',
+    path: 'livros',
     component: LivrosComponent
   },
   {
-    path: 'Autores',
+    path: 'autores',
     component: AutoresComponent
   },
   {
-    path: 'Autor/:id',
+    path: 'autor/detalhes/:id',
     component: AutorComponent
   },
   {
-    path: 'Livro/{id}',
+    path: 'livro/detalhes/:id',
     component: LivroComponent
   },
   {
-    path: 'Autor/Novo-Autor',
+    path: 'autor/Novo-Autor',
     component: NovoAutorComponent
   },
   {
-    path: 'Livro/Novo-Livro',
+    path: 'livro/Novo-Livro',
     component: NovoLivroComponent
   }
 ];

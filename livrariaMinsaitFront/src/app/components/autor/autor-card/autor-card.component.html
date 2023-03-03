@@ -1,7 +1,8 @@
 <mat-card class="autor-card">
     <mat-card-header>
         <mat-card-title-group class="autor-card-title-group">
-            <mat-card-title class="autor-nome"><a href="/Autor/{{autor.id}}"> {{autor.nome}} </a></mat-card-title>
+            <mat-card-title class="autor-nome"><a href="/autor/detalhes/{{autor.id}}"> {{autor.nome}}
+                </a></mat-card-title>
             <mat-card-subtitle> {{autor.nacionalidade}} </mat-card-subtitle>
             <img mat-card-md-image
                 [src]="autor.foto.length ? autor.foto : 'https://filestore.community.support.microsoft.com/api/images/6061bd47-2818-4f2b-b04a-5a9ddb6f6467?upload=true&fud_access=wJJIheezUklbAN2ppeDns8cDNpYs3nCYjgitr%2BfFBh2dqlqMuW7np3F6Utp%2FKMltnRRYFtVjOMO5tpbpW9UyRAwvLeec5emAPixgq9ta07Dgnp2aq5eJbnfd%2FU3qhn5498QChOTHl3NpYS7xR7zASsaF20jo4ICSz2XTm%2B3GDR4XitSm7nHRR843ku7uXQ4oF6innoBxMaSe9UfrAdMi7owFKjdP9m1UP2W5KAtfQLNQqewpIgNm8TVO4GO5v9sGqgqs3xWAuztC7LdeU1uK5MlYEg4tcMW8ax1kJeEuI7GF14QRdq%2FnahToC7uRfuyqXfrNDVU7TRYmeyQhkHZT14xQvDhOtAZUQgwPgSV7MB79G0TTHCKLcW2s8a7Ha%2FVxrBPFKlzaoZtTeTeGqX%2Fi8TfD6wvCemlZHf7t40SMlpg%3D'"

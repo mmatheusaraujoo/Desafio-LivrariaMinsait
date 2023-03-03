@@ -53,7 +53,7 @@ export class AutoresComponent {
 
   abrirPaginaAutor(autor: autor) {
     console.log(autor);
-    let rota = '/Autor/' + autor.id;
+    let rota = '/autor/detalhes/' + autor.id;
     this.router.navigate([rota]);
   }
 
