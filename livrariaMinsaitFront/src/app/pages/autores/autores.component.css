@@ -32,21 +32,14 @@
     justify-content: flex-start;
     gap: auto;
     text-align: center;
+    font-size: 16px;
+    color: var(--mat-primary);
 
     background: var(--mat-divider);
     border-bottom: 1px solid var(--mat-primary);
     border-top: 1px solid var(--mat-primary);
 }
 
-.list-header {
-    font-size: 16px;
-    color: var(--mat-primary);
-}
-
-.list-header button {
-    font-size: 16px;
-    color: var(--mat-primary);
-}
 
 .list-item {
     height: 4rem;

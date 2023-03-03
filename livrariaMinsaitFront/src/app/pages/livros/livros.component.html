@@ -2,6 +2,8 @@
 <div class="livros-page">
     <div class="livros-page-header">
         <h2>Livros Listados</h2>
+        <input matInput type="text" [(ngModel)]="termoDePesquisa" placeholder="Pesquisar Livro"
+            (input)="filtrarLivros()" class="input-filtro">
         <a href="/Livro/Novo-Livro">
             <button mat-stroked-button color="primary">
                 <mat-icon color="primary">add</mat-icon>
@@ -12,17 +14,32 @@
     <mat-divider></mat-divider>
     <ul class="livros-list">
         <li class="list-item list-header">
-            <p class="table-item">Id</p>
-            <p class="table-item">Titulo</p>
-            <p class="table-item">Subtitulo</p>
-            <p class="table-item">Autor</p>
-            <p class="table-item">Data de Publicação</p>
+            <button mat-button color="primary" class="table-item" (click)="ordenarPorId()">
+                Id
+                <mat-icon aria-hidden="false" aria-label="Incone de filtro" fontIcon="expand_more"></mat-icon>
+            </button>
+            <button mat-button color="primary" class="table-item" (click)="ordenarPorTitulo()">
+                Titulo
+                <mat-icon aria-hidden="false" aria-label="Incone de filtro" fontIcon="expand_more"></mat-icon>
+            </button>
+            <p class=" table-item">Subtitulo</p>
+            <button mat-button color="primary" class="table-item" (click)="ordenarPorAutor()">
+                Autor
+                <mat-icon aria-hidden="false" aria-label="Incone de filtro" fontIcon="expand_more"></mat-icon>
+            </button>
+            <button mat-button color="primary" class="table-item" (click)="ordenarPorData()">
+                Data de Publicação
+                <mat-icon aria-hidden="false" aria-label="Incone de filtro" fontIcon="expand_more"></mat-icon>
+            </button>
             <p class="table-item">Editora</p>
             <p class="table-item">ISBN</p>
-            <p class="table-item">Quantidade em Estoque</p>
+            <button mat-button color="primary" class="table-item" (click)="ordenarPorEstoque()">
+                Quantidade em Estoque
+                <mat-icon aria-hidden="false" aria-label="Incone de filtro" fontIcon="expand_more"></mat-icon>
+            </button>
             <p class="table-item">Editar/Remover</p>
         </li>
-        <li class="list-item list-livro" *ngFor="let livro of livros$ | async">
+        <li class="list-item list-livro" *ngFor="let livro of livrosLista">
             <p class="table-item"> {{livro.id}} </p>
             <p class="table-item"> {{livro.titulo}} </p>
             <p class="table-item"> {{livro.subtitulo}} </p>

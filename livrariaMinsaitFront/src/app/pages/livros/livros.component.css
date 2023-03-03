@@ -5,6 +5,18 @@
     margin: 2rem;
 }
 
+.input-filtro {
+    width: 30%;
+    padding: 15px;
+    background: transparent;
+    border: solid var(--mat-divider);
+    border-radius: 10px;
+    font-size: 16px;
+
+    color: white;
+
+}
+
 
 .livros-list {
     display: flex;
@@ -20,16 +32,14 @@
     justify-content: flex-start;
     gap: auto;
     text-align: center;
+    font-size: 16px;
+    color: var(--mat-primary);
 
     background: var(--mat-divider);
     border-bottom: 1px solid var(--mat-primary);
     border-top: 1px solid var(--mat-primary);
 }
 
-.list-header {
-    font-size: 1.1rem;
-    color: var(--mat-primary);
-}
 
 .list-item {
     height: 4rem;

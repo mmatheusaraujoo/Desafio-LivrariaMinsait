@@ -14,11 +14,22 @@
     <mat-divider></mat-divider>
     <ul class="autores-list">
         <li class="list-item list-header">
-            <button mat-button color="primary" class="table-item" (click)="ordenarPorId()">Id</button>
-            <button mat-button color="primary" class="table-item" (click)="ordenarPorNome()">Nome</button>
-            <button mat-button color="primary" class="table-item" (click)="ordenarPorData()">Data de Nascimento</button>
-            <button mat-button color="primary" class="table-item"
-                (click)="ordenarPorNacionalidade()">Nacionalidade</button>
+            <button mat-button color="primary" class="table-item" (click)="ordenarPorId()">
+                Id
+                <mat-icon aria-hidden="false" aria-label="Incone de filtro" fontIcon="expand_more"></mat-icon>
+            </button>
+            <button mat-button color="primary" class="table-item" (click)="ordenarPorNome()">
+                Nome
+                <mat-icon aria-hidden="false" aria-label="Incone de filtro" fontIcon="expand_more"></mat-icon>
+            </button>
+            <button mat-button color="primary" class="table-item" (click)="ordenarPorData()">
+                Data de Nascimento
+                <mat-icon aria-hidden="false" aria-label="Incone de filtro" fontIcon="expand_more"></mat-icon>
+            </button>
+            <button mat-button color="primary" class="table-item" (click)="ordenarPorNacionalidade()">
+                Nacionalidade
+                <mat-icon aria-hidden="false" aria-label="Incone de filtro" fontIcon="expand_more"></mat-icon>
+            </button>
             <p class="table-item">Editar/Remover</p>
         </li>
         <li class="list-item list-autor" *ngFor="let autor of autores" (click)="abrirPaginaAutor(autor)">
