@@ -31,11 +31,11 @@ const routes: Routes = [
     component: LivroComponent
   },
   {
-    path: 'autor/Novo-Autor',
+    path: 'autor/novo-autor',
     component: NovoAutorComponent
   },
   {
-    path: 'livro/Novo-Livro',
+    path: 'livro/novo-livro',
     component: NovoLivroComponent
   },
   {

@@ -1,0 +1,72 @@
+.pagina-conteudo {
+    margin: 10% 10% 0;
+    display: flex;
+    flex-flow: column;
+    gap: 50px;
+}
+
+.livro-conteudo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10%;
+}
+
+.conteudo-texto {
+    overflow: hidden;
+}
+
+.livro-capa {
+    border-radius: 5px;
+}
+
+.livro-titulo {
+    margin: 0 0 10px;
+    font-size: 32px;
+    color: var(--mat-primary);
+    font-weight: 600;
+}
+
+.livro-autor {
+    border-bottom: 1px solid var(--mat-bluegray-lighter);
+    font-size: 16px;
+    color: var(--mat-bluegray-lighter);
+}
+
+.livro-autor:hover {
+    transition: 0.5s;
+    color: var(--mat-bluegray-darker);
+    border-bottom: 1px solid var(--mat-bluegray-darker);
+}
+
+.livro-resumo {
+    margin-top: 10px;
+    text-align: justify;
+    font-size: 18px;
+}
+
+
+.info-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+.list-item {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.item-title {
+    color: var(--mat-primary);
+    margin-bottom: 10px;
+}
+
+.item-icon {
+    margin-bottom: 20px;
+    font-size: 48px;
+    width: auto;
+    height: auto;
+}

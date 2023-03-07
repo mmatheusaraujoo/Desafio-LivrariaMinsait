@@ -1,0 +1,32 @@
+.page-title {
+    margin-top: 10%;
+    text-align: center;
+
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.novo-livro-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 5%;
+    gap: 10px;
+
+}
+
+.form-item {
+    width: 50%;
+}
+
+.form-button-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.form-button {
+    width: 10rem;
+    font-size: 1.2rem;
+}

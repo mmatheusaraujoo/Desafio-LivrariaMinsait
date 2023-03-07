@@ -1,2 +1,41 @@
 <app-navbar></app-navbar>
-<h1>Teste da pagina</h1>
+<div class="pagina-conteudo" *ngIf="(livro$ | async) as livro">
+    <div class="livro-conteudo">
+        <img src="{{livro.fotoDaCapa}}" alt="Capa de {{livro.titulo}}" class="livro-capa" width="400">
+        <div class="conteudo-texto">
+            <h1 class="livro-titulo">{{livro.titulo}}: {{livro.subtitulo}}</h1>
+            <a href="/autor/detalhes/{{livro.autores[0].id}}" class="livro-autor"
+                *ngIf='livro.autores[0] != null'>{{livro.autores[0].nome}}</a>
+            <p class="livro-resumo">{{livro.resumo}}</p>
+        </div>
+    </div>
+    <div class="livro-info">
+        <h2 class="into-title">Informações</h2>
+        <mat-divider></mat-divider>
+        <ul class="info-list">
+            <li class="list-item">
+                <h4 class="item-title">ISBN-13</h4>
+                <mat-icon aria-hidden="false" aria-label="Icone de codigo de barras" fontIcon="qr_code"
+                    class="item-icon"></mat-icon>
+                <p> {{livro.isbn}} </p>
+            </li>
+            <li class="list-item">
+                <h4 class="item-title">Editora</h4>
+                <mat-icon aria-hidden="false" aria-label="Icone de predio" fontIcon="apartment"
+                    class="item-icon"></mat-icon>
+                <p> {{livro.editora}} </p>
+            </li>
+            <li class="list-item">
+                <h4 class="item-title">Edicão</h4>
+                <mat-icon aria-hidden="false" aria-label="Icone tag" fontIcon="tag" class="item-icon"></mat-icon>
+                <p> {{livro.edicao}}ª </p>
+            </li>
+            <li class="list-item">
+                <h4 class="item-title">Data de publicação</h4>
+                <mat-icon aria-hidden="false" aria-label="Icone de Calendário" fontIcon="calendar_month"
+                    class="item-icon"></mat-icon>
+                <p> {{livro.dataDePublicacao | date:'dd-MM-yyyy'}} </p>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -45,8 +45,11 @@ export class LivrosComponent implements OnInit {
 
   ordenarPorAutor() {
     this.livrosLista = this.livrosLista.sort((a, b) => {
-      if (a.autores[0].nome < b.autores[0].nome) { return -1; }
-      if (a.autores[0].nome > b.autores[0].nome) { return 1; }
+      const nomeAutorA = a.autores?.[0]?.nome ?? '';
+      const nomeAutorB = b.autores?.[0]?.nome ?? '';
+
+      if (nomeAutorA < nomeAutorB) { return -1; }
+      if (nomeAutorA > nomeAutorB) { return 1; }
       return 0;
     });
   }

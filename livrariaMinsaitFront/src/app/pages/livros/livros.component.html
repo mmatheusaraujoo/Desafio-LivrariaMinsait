@@ -4,7 +4,7 @@
         <h2>Livros Listados</h2>
         <input matInput type="text" [(ngModel)]="termoDePesquisa" placeholder="Pesquisar Livro"
             (input)="filtrarLivros()" class="input-filtro">
-        <a href="/Livro/Novo-Livro">
+        <a href="/livro/novo-livro">
             <button mat-stroked-button color="primary">
                 <mat-icon color="primary">add</mat-icon>
                 Cadastrar Novo Livro
@@ -43,7 +43,8 @@
             <p class="table-item"> {{livro.id}} </p>
             <p class="table-item"> {{livro.titulo}} </p>
             <p class="table-item"> {{livro.subtitulo}} </p>
-            <p class="table-item"> {{livro.autores[0].nome}} </p>
+            <p *ngIf='livro.autores[0] != null' class="table-item"> {{livro.autores[0].nome}}</p>
+            <p *ngIf='livro.autores[0] == null' class="table-item"> </p>
             <p class="table-item"> {{livro.dataDePublicacao | date:'dd-MM-yyyy'}} </p>
             <p class="table-item"> {{livro.editora}} </p>
             <p class="table-item"> {{livro.isbn}} </p>

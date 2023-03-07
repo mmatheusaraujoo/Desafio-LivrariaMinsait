@@ -79,7 +79,7 @@ export class EditarAutorComponent {
           async (data) => {
             console.log(data);
             await this.dialogoService.abrirMensagem('Altereado', 'Autor "' + this.autor!.id + '" alterado com sucesso!');
-            this.router.navigate(['/autor/' + this.autor!.id]);
+            this.router.navigate(['/autor/detalhes/' + this.autor!.id]);
           },
           (err) => {
             console.log(err);

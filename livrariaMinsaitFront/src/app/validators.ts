@@ -14,3 +14,13 @@ export function DateValidator(): ValidatorFn {
         return isDate ? { 'isDate': { value: control.value } } : null;
     }
 }
+
+export function numberValidator(): ValidatorFn {
+    return (control: AbstractControl): { [key: string]: any } | null => {
+        if (control.value === '' || /^[0-9]+$/.test(control.value)) {
+            return null;
+        } else {
+            return { 'number': true };
+        }
+    };
+}

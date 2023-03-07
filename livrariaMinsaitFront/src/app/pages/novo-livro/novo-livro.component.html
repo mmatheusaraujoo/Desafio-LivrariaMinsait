@@ -1,1 +1,85 @@
-<p>novo-livro works!</p>
+<h1 class="page-title">
+    Cadastrar Novo Livro
+</h1>
+<form class="novo-livro-form mat-primary" [formGroup]="form">
+    <mat-form-field class="form-item form-item-nome">
+        <mat-label>Titulo</mat-label>
+        <input type="text" matInput formControlName="titulo" placeholder="Ex. Matheus Araújo dos Santos">
+        <mat-hint>*Campo obrigatório.</mat-hint>
+        <mat-error *ngIf="(form.controls['titulo'].value == '')">
+            *O <strong>titulo</strong> é obrigatório.
+        </mat-error>
+        <mat-error
+            *ngIf="(form.controls['titulo'].invalid && !form.controls['titulo'].pristine && form.controls['titulo'].value != '')">
+            *Por favor digíte um nome válido.
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field class="form-item">
+        <mat-label>Subtitulo</mat-label>
+        <input matInput formControlName='subtitulo' placeholder="subbtitulo...">
+        <mat-error *ngIf="form.controls['subtitulo'].invalid">*Digite um subtitulo válida.</mat-error>
+    </mat-form-field>
+    <mat-form-field class="form-item">
+        <mat-label>Quantidade de Paginas</mat-label>
+        <input type="number" formControlName='quantidadeDePaginas' matInput placeholder="Ex. 250">
+        <mat-hint>*Campo obrigatório.</mat-hint>
+        <mat-error *ngIf="(form.controls['quantidadeDePaginas'].value == '')">
+            *A <strong>quantidade de paginas</strong> é obrigatório.
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance='fill' class="form-item">
+        <mat-label>Data de Publicação</mat-label>
+        <input matInput type="date" formControlName="dataDePublicacao">
+        <mat-hint>*Campo obrigatório.</mat-hint>
+        <mat-error *ngIf="(form.controls['dataDePublicacao'].value == '')">
+            *A <strong>data de publicacao</strong> é obrigatório.
+        </mat-error>
+        <mat-error *ngIf="!form.controls['dataDePublicacao'].valid">
+            *Digite uma data válida.
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field class="form-item">
+        <mat-label>Editora</mat-label>
+        <input matInput formControlName='editora' placeholder="editora..">
+        <mat-error *ngIf="form.controls['editora'].invalid">*Digite uma editora válida.</mat-error>
+    </mat-form-field>
+    <mat-form-field class="form-item">
+        <mat-label>Edição</mat-label>
+        <input type="number" formControlName='edicao' matInput placeholder="Ex. 2">
+        <mat-error *ngIf="form.controls['edicao'].invalid">*Digite uma edição válida.</mat-error>
+    </mat-form-field>
+    <mat-form-field class="form-item">
+        <mat-label>ISBN-13</mat-label>
+        <input matInput formControlName="isbn" #isbnText maxlength="13" placeholder="Ex. 0123456789012">
+        <mat-hint align="end">{{isbnText.value.length}} / 13</mat-hint>
+        <mat-error *ngIf="form.controls['isbn'].invalid">*Digite um ISBN válido.</mat-error>
+    </mat-form-field>
+    <mat-form-field class="form-item">
+        <mat-label>Link da Foto de Capa</mat-label>
+        <input matInput formControlName='fotoDaCapa' placeholder="https://">
+        <mat-error *ngIf="form.controls['fotoDaCapa'].invalid">*Digite um Link válido.</mat-error>
+    </mat-form-field>
+    <mat-form-field class="form-item">
+        <mat-label>Quantidade em Estoque</mat-label>
+        <input type="number" formControlName='quantidadeEmEstoque' matInput placeholder="Ex. 250">
+        <mat-hint>*Campo obrigatório.</mat-hint>
+        <mat-error *ngIf="(form.controls['quantidadeDePaginas'].value == '')">
+            *A <strong>quantidade em estoque</strong> é obrigatório.
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field class="form-item form-item-resumo">
+        <mat-label>Resumo</mat-label>
+        <textarea matInput #resumoText formControlName='resumo' placeholder="Ex. Lorem ipsum..."></textarea>
+        <mat-hint align="end">{{resumoText.value.length}} / 1200</mat-hint>
+        <mat-error *ngIf="form.controls['resumo'].invalid">*O texto ultrapassa o tamanho max de 1200
+            caracteres.</mat-error>
+
+    </mat-form-field>
+    <div class="form-item form-button-list">
+        <a mat-raised-button class="form-button" href="/livros">
+            Cancelar
+        </a>
+        <button mat-raised-button color="primary" class="form-button" [disabled]="form.invalid"
+            (click)="submit()">Salvar</button>
+    </div>
+</form>

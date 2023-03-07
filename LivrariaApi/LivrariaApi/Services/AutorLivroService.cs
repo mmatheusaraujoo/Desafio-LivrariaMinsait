@@ -20,9 +20,9 @@ namespace LivrariaApi.Services
             try
             {
                 var autor = _dbContext.Autores
-                    .FirstOrDefault(x=> x.Id == autorId);
+                    .FirstOrDefault(x => x.Id == autorId);
                 var livro = _dbContext.Livros
-                    .FirstOrDefault( x => x.Id == livroId);
+                    .FirstOrDefault(x => x.Id == livroId);
 
                 if (autor == null || livro == null) { throw new ArgumentNullException("id", "Não foi possível encontrar um ou mais termos."); }
                 if (livro.Autores == null) { livro.Autores = new List<Autor>(); }
@@ -30,11 +30,11 @@ namespace LivrariaApi.Services
                 autor.Livros.Add(livro);
                 livro.Autores.Add(autor);
                 _dbContext.SaveChanges();
-                return new AutorLivro(autorId,livroId);
+                return new AutorLivro(autorId, livroId);
 
             }
             catch (ArgumentNullException) { throw; }
-            catch (Exception){throw;}
+            catch (Exception) { throw; }
         }
 
         public void RemoverVinculoAutorLivro(int autorId, int livroId)
@@ -44,13 +44,28 @@ namespace LivrariaApi.Services
                 var autor = _dbContext.Autores.FirstOrDefault(x => x.Id == autorId);
                 var livro = _dbContext.Livros.FirstOrDefault(x => x.Id == livroId);
 
-                if (autor == null || livro == null || livro.Autores == null || autor.Livros == null) { throw new ArgumentNullException("id", "Não foi possível encontrar um ou mais termos."); }
+                if (autor == null || livro == null) { throw new ArgumentNullException("id", "Não foi possível encontrar um ou mais termos."); }
                 autor.Livros.Remove(livro);
                 livro.Autores.Remove(autor);
                 _dbContext.SaveChanges();
             }
             catch (ArgumentNullException) { throw; }
             catch (Exception) { throw; }
+        }
+
+        public AutorLivro RetornarAutorLivro(int autorId, int livroId)
+        {
+            try
+            {
+                var autor = _dbContext.Autores.FirstOrDefault(x => x.Id == autorId);
+                var livro = _dbContext.Livros.FirstOrDefault(x => x.Id == livroId);
+
+                if (autor == null || livro == null) { throw new ArgumentNullException("id", "Não foi possível encontrar um ou mais termos."); }
+                return new AutorLivro(autorId, livroId);
+            }
+            catch (ArgumentNullException) { throw; }
+            catch (Exception) { throw; }
+
         }
     }
 }

@@ -33,7 +33,7 @@ export class DataService {
   retornarLivros() {
     return this.http.get<livro[]>(this.url + '/Livro');
   }
-  retornarlivro(id: number) {
+  retornarLivro(id: number) {
     return this.http.get<livro>(this.url + '/Livro/' + id);
   }
   cadastraLivro(object: object) {
@@ -48,10 +48,9 @@ export class DataService {
 
 
   vincularLivroAutor(idAutor: number, idLivro: number) {
-    return this.http.post(this.url + '/Autor/' + idAutor + '/Livro/' + idLivro, '')
+    return this.http.post(this.url + '/Autor/' + idAutor + '/Livro/' + idLivro, null)
   }
   deletarVinculoLivroAutor(idAutor: number, idLivro: number) {
     return this.http.delete(this.url + '/Autor/' + idAutor + '/Livro/' + idLivro)
   }
-
 }

@@ -36,5 +36,18 @@ namespace LivrariaApi.Controllers
             catch (Exception ex) { return StatusCode(500, ex.Message); }
 
         }
+        [HttpGet]
+        public IActionResult RetornarAutorLivro(int autorId, int livroId)
+        {
+            try
+            {
+                var autorLivro = _autorLivroService.RetornarAutorLivro(autorId, livroId);
+                return Ok(autorLivro);
+            }
+            catch (ArgumentNullException ex) { return NotFound(ex.Message); }
+            catch (Exception ex) { return StatusCode(500, ex.Message); }
+
+        }
+
     }
 }
